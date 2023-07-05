@@ -1,10 +1,14 @@
 <?php
 
+
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\UserProfile;
 
 
 class AuthController extends Controller
@@ -38,7 +42,7 @@ class AuthController extends Controller
             'password' => bcrypt($validatedData['password']),
         ]);
 
-        $profile = Profile::create([
+        $profile = UserProfile::create([
             'first_name' => $validatedData['first_name'],
             'last_name' => $validatedData['last_name'],
             'address' => $validatedData['address'],

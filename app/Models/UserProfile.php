@@ -10,6 +10,8 @@ use App\Models\User;
 
 class UserProfile extends Model
 {
+
+    protected $table = 'profiles';
     protected $fillable = [
         'first_name',
         'last_name',
